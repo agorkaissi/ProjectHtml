@@ -22,13 +22,16 @@ function addMovie() {
     var li = document.createElement("li");
     li.innerHTML = "<input type='checkbox'> " + movieTitle + ", " + movieYear + ", " + movieActors;
     document.getElementById("moviesList").appendChild(li)
-            
-    document.getElementById("inputTitle").value;
-    document.getElementById("inputYear").value;
-    document.getElementById("inputActors").value;
+
 }
 
 function deleteMovie() {
     var checkedBoxes = document.querySelectorAll("input[type='checkbox']:checked");
-    document.getElementById("moviesList").removeChild(checkedBoxes[i].parentNode);
+    checkedBoxes.forEach(removalFunction);
+        
+    function removalFunction(item,index)
+    {
+        document.getElementById("moviesList").removeChild(checkedBoxes[index].parentNode);
+    }
+    
 }
